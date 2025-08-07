@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  anomaly:
+    build: .
+    ports:
+      - "8501:8501"
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    restart: always
